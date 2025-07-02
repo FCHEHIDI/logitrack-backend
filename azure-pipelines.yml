@@ -1,0 +1,35 @@
+# Azure Pipelines YAML for LogiTrack ASP.NET Core API (simulation/learning)
+trigger:
+  - main
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- task: UseDotNet@2
+  inputs:
+    packageType: 'sdk'
+    version: '9.0.x'
+    installationPath: $(Agent.ToolsDirectory)/dotnet
+
+- script: dotnet restore LogiTrack/LogiTrack.csproj
+  displayName: 'Restore NuGet packages'
+
+- script: dotnet build LogiTrack/LogiTrack.csproj --configuration $(buildConfiguration) --no-restore
+  displayName: 'Build project'
+
+- script: dotnet test LogiTrack/LogiTrack.csproj --configuration $(buildConfiguration) --no-build --verbosity normal
+  displayName: 'Run tests'
+  continueOnError: true
+
+- script: dotnet publish LogiTrack/LogiTrack.csproj --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)
+  displayName: 'Publish project'
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'drop'
+    publishLocation: 'Container'

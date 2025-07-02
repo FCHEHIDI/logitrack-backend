@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogiTrack", "LogiTrack\LogiTrack.csproj", "{3CD3F619-9E9C-0FD9-6525-E702EAABB644}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3CD3F619-9E9C-0FD9-6525-E702EAABB644}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD3F619-9E9C-0FD9-6525-E702EAABB644}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD3F619-9E9C-0FD9-6525-E702EAABB644}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD3F619-9E9C-0FD9-6525-E702EAABB644}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F066C9D-7F92-4AE3-9979-88587A661452}
+	EndGlobalSection
+EndGlobal
