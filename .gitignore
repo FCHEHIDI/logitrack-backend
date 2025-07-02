@@ -1,0 +1,41 @@
+# .NET build outputs
+bin/
+obj/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code settings
+.vscode/
+
+# Rider settings
+.idea/
+*.sln.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# ASP.NET secrets
+secrets.json
+
+# SQLite database (if not needed in repo)
+*.db
+
+# Logs
+*.log
+
+# Publish output
+LogiTrack/publish/
+
+# Test results
+TestResults/
+
+# Docker artifacts
+*.tar
+
+# Others
+.env
