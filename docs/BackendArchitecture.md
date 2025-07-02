@@ -40,33 +40,15 @@
 
 ```mermaid
 flowchart TD
-    subgraph API Layer
-        A1[InventoryController]
-        A2[OrderController]
-        A3[AuthController]
-    end
-    subgraph Data Layer
-        B1[LogiTrackContext (EF Core)]
-        B2[In-Memory Cache]
-    end
-    subgraph Identity
-        C1[ASP.NET Core Identity]
-        C2[JWT Auth]
-    end
-    subgraph Models
-        D1[InventoryItem]
-        D2[Order]
-        D3[ApplicationUser]
-    end
-    A1 -- CRUD & Caching --> B1
-    A1 -- Uses --> B2
-    A2 -- CRUD & Inventory Updates --> B1
-    A3 -- Auth/Registration --> C1
-    C1 -- User Data --> B1
-    C1 -- Issues Tokens --> C2
-    B1 -- Maps --> D1
-    B1 -- Maps --> D2
-    B1 -- Maps --> D3
+    InventoryController --> LogiTrackContext
+    InventoryController --> InMemoryCache
+    OrderController --> LogiTrackContext
+    AuthController --> Identity
+    Identity --> JWTAuth
+    Identity --> LogiTrackContext
+    LogiTrackContext --> InventoryItem
+    LogiTrackContext --> Order
+    LogiTrackContext --> ApplicationUser
 ```
 
 ---
