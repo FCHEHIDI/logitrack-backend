@@ -16,25 +16,25 @@ Production-ready ASP.NET Core API for inventory and order management, built as a
 
 ```mermaid
 flowchart TD
-    A[Client] -->|JWT Auth| B(AuthController)
-    A -->|GET, POST, DELETE| C(InventoryController)
-    A -->|GET, POST, DELETE| D(OrderController)
-    A -->|GET| E(HealthCheck)
+    Client -->|JWT Auth| AuthController
+    Client -->|GET, POST, DELETE| InventoryController
+    Client -->|GET, POST, DELETE| OrderController
+    Client -->|GET| HealthCheck
 
-    B -->|POST /api/auth/register| F1[Register]
-    B -->|POST /api/auth/login| F2[Login]
-    B -->|POST /api/auth/confirm-email| F3[Email Confirm]
+    AuthController -->|POST /api/auth/register| Register
+    AuthController -->|POST /api/auth/login| Login
+    AuthController -->|POST /api/auth/confirm-email| EmailConfirm
 
-    C -->|GET /api/inventory| G1[List Inventory]
-    C -->|POST /api/inventory| G2[Add Item]
-    C -->|DELETE /api/inventory/{id}| G3[Delete Item]
+    InventoryController -->|GET /api/inventory| ListInventory
+    InventoryController -->|POST /api/inventory| AddItem
+    InventoryController -->|DELETE /api/inventory/id| DeleteItem
 
-    D -->|GET /api/orders| H1[List Orders]
-    D -->|GET /api/orders/{id}| H2[Order By Id]
-    D -->|POST /api/orders| H3[Create Order]
-    D -->|DELETE /api/orders/{id}| H4[Delete Order]
+    OrderController -->|GET /api/orders| ListOrders
+    OrderController -->|GET /api/orders/id| OrderById
+    OrderController -->|POST /api/orders| CreateOrder
+    OrderController -->|DELETE /api/orders/id| DeleteOrder
 
-    E -->|GET /health| I1[Health Status]
+    HealthCheck -->|GET /health| HealthStatus
 ```
 
 ## Quickstart
