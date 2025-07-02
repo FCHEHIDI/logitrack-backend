@@ -61,4 +61,4 @@ flowchart TD
 
 ---
 
-© 2025 Your Name. For learning and portfolio use.
+© 2025 Fares Chehidi.
