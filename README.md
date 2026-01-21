@@ -1,5 +1,7 @@
 # LogiTrack API
 
+![logitrack-backend](payloadtraffic.png)
+
 Production-ready ASP.NET Core API for inventory and order management, built as a Microsoft Backend Capstone project.
 
 ## Features
